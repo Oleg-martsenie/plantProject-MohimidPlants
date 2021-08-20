@@ -124,65 +124,6 @@ section {
     transform: scale(1.1);
 }
 
-.heading {
-    text-align: center;
-    font-size: 4rem;
-    color: var(--font-color);
-    text-transform: uppercase;
-    font-weight: 700;
-    padding:1rem;
-}
-
-.about-us .box-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #f5f5f57e;
-    border-radius: 12px;
-    margin: auto;
-}
-
-.about-us .box-container .box {
-    text-align: center;
-    padding: 4rem;
-}
-
-.about-us .box-container .box:first-child {
-    border-bottom: 1px solid #ccc;
-}
-
-.about-us .box-container .box h2 {
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
-    color: var(--font-color);
-}
-
-.about-us .box-container .box p {
-    color: #00C9A7;
-    font-size: 2.3rem;
-}
-
-.buy .box-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.buy .box-container .box {
-    flex: 1 1 30rem; 
-    border-radius: 5rem;
-    margin: 1.5rem;
-    padding: 1rem;
-    text-align: center;
-}
-
-.buy .box-container .box img {
-    height: 40rem;
-    padding: 1rem;
-}
-
 
 
 
