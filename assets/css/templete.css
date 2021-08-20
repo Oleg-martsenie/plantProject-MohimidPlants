@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    list-style: none;
+    font-family: 'Nunito', sans-serif;
+    border: none;
+    transition: all .4s cubic-bezier(.38,1.15,.7,1.12);
+}
+
+*::selection {
+    background: #296073;
+    color: #FFF;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+:root {
+    --font-color:#4B4453;
+    --hover-navbar:#acd663a4;
+    --main-boxShadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+/*HEADER*/
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 1000;
+    padding: 2rem;
+}
+
+header .logo  {
+    font-size: 2.5rem;
+    border: 1px solid #ABD663;
+    color: #FFF;
+    padding: .1rem;
+    background: #ABD663;
+}
+
+header .logo span {
+    background: #FFF;
+    color:#454545;
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    margin-left: .7rem;
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    color: var(--font-color);
+    transition: all .4s ease-in-out;
+}
+
+header .navbar .active,
+header .navbar a:hover {
+    background-color: var(--hover-navbar);
+    color: #fff;
+    box-shadow:var(--main-boxShadow);
+}
+
+#menu {
+    font-size: 3rem;
+    color: var(--font-color);
+    cursor: pointer;
+    display: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 1rem 9%;
+    padding-top: 8rem;
+}
+
+.home {
+    background-image: url(/images/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.home .content {
+    text-align: center;
+    padding-top:3rem ;
+}
+
+.home .content h1 {
+    color: #ABD663;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.home .content h3 {
+    color: #000;
+    font-size: 3.5rem;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+
+.home .content a {
+    display: inline-block;
+    text-align: center;
+    border: .1rem solid #1b4c2f98;
+    padding: 1rem 1rem;
+    color: #000;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.home .content a:hover {
+    box-shadow: var(--main-boxShadow);
+    transform: scale(1.1);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--font-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    padding:1rem;
+}
+
+.about-us .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #f5f5f57e;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.about-us .box-container .box {
+    text-align: center;
+    padding: 4rem;
+}
+
+.about-us .box-container .box:first-child {
+    border-bottom: 1px solid #ccc;
+}
+
+.about-us .box-container .box h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--font-color);
+}
+
+.about-us .box-container .box p {
+    color: #00C9A7;
+    font-size: 2.3rem;
+}
+
+.buy .box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.buy .box-container .box {
+    flex: 1 1 30rem; 
+    border-radius: 5rem;
+    margin: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.buy .box-container .box img {
+    height: 40rem;
+    padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Media Queries*/
+
+@media screen and (max-width: 1200px) {
+    
+    html {
+    font-size: 55%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    #menu {
+        display: block;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0;
+        width: 100%;
+        background: #FFF;
+        padding: 2rem;
+        border-top: .1rem solid #acd6636b;
+        transform-origin: top;
+        transform:scaleY(0);
+        opacity: 0;
+    }
+    header .navbar a {
+        display: block;
+        margin: 1.5rem;
+        font-size: 2rem;
+    }
+    
+    .bx-x {
+        transform: rotate(180deg);
+    }
+
+    header .navbar.nav-toggle {
+        transform:scaleY(1);
+        opacity: 1;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    
+    html {
+    font-size: 59%;
+    }
+    .home .content h1 {
+        font-size: 4rem;
+    }
+    .home .content h3 {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .home .content h1 {
+        font-size: 3.5rem;
+    }
+    .home .content h3 {
+        font-size: 2rem;
+    }
+}
