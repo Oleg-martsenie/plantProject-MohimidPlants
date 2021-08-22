@@ -18,7 +18,9 @@ const QSA = (e) => {
     return document.querySelectorAll(e)
 }
 
+let= cart = [];
 let modalqt = 1;
+let modalKey = 0;
 
 
 
@@ -37,6 +39,8 @@ CactusJson.map((item, index)=> {
         let key = e.target.closest('.cactu-item').getAttribute('data-key');
 
         modalqt = 1;
+
+        modalKey = key;
 
 
         QS('.cactuBig img').src = CactusJson[key].img;
@@ -71,3 +75,42 @@ function closeModal() {
 QSA('.cactuInfo-cancelButton, .cactuInfo-cancelMobileButton').forEach((item) => {
     item.addEventListener('click', closeModal)
 });
+
+QS('.cactuInfo--qtmenos').addEventListener('click', () => {
+    if(modalqt > 1) {
+        modalqt --;
+        QS('.cactuInfo-qt').innerHTML = modalqt;
+    }
+});
+
+QS('.cactuInfo--qtmais').addEventListener('click', () => {
+    modalqt++;
+    QS('.cactuInfo-qt').innerHTML = modalqt;
+});
+
+QS(".cactuInfo-addButton").addEventListener('click', () => {
+
+
+    cart.push({
+        id:CactusJson[modalKey].id,
+        qt:modalqt
+    })
+
+    updateCart()
+    closeModal();
+});
+
+function updateCart() {
+    if(cart.length > 0) {
+        QS('aside').classList.add('show');
+        QS('.cart').innerHTML = '';
+        for(let i in cart) {
+            let  cactoItem = CactusJson.find((item)=>item.id == cart[i].id)
+            let cartItem = QS('.models .cactu-item').cloneNode(true);
+        }
+
+    } else {
+        QS('aside').classList.remove('show');
+
+    }
+}
